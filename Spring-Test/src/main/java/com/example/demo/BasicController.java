@@ -1,10 +1,13 @@
 package com.example.demo;
 
+import jakarta.servlet.http.HttpSession;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 @Controller
@@ -29,9 +32,45 @@ public class BasicController {
         userMap.put("userB", userB);
 
         model.addAttribute("user", userA);
-        model.addAttribute("users", userList);
+        model.addAttribute("userList", userList);
         model.addAttribute("userMap", userMap);
 
         return "basic/variable";
+    }
+
+    @GetMapping("/basic-objects")
+    public String basicObject(HttpSession httpSession) {
+        httpSession.setAttribute("sessionData", "Hello Session");
+
+        return "basic/basic-objects";
+    }
+
+    @Component("helloBean")
+    static class HelloBean {
+        public String helloBean(String data) {
+
+            return "Hello" + data;
+        }
+    }
+
+    @GetMapping("/date")
+    public String date(Model model) {
+        model.addAttribute("localDateTime", LocalDateTime.now());
+
+        return "basic/date";
+    }
+
+    @GetMapping("/each")
+    public String each(Model model) {
+        addUsers(model);
+        return "basic/each";
+    }
+
+    private void addUsers(Model model) {
+        List<User> users = Arrays.asList(new User("userA", 10),
+                new User("userB", 20),
+                new User("userC", 30));
+
+        model.addAttribute("users", users);
     }
 }

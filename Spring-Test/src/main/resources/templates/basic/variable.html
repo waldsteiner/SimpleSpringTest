@@ -12,16 +12,16 @@
     <li>${user.getUsername()} = <span th:text="${user.getUsername()}"></span></li>
 </ul>
 <ul> <h3>List</h3>
-    <li>${users[0].username} = <span th:text="${users[0].username}"></span></li>
-    <li>${users[0]['username']} = <span th:text="${users[0]['username']}"></span></li>
-    <li>${users[0].getUsername()} = <span th:text="${users[0].getUsername()}"></span></li>
+    <li>${userList[0].username} = <span th:text="${userList[0].username}"></span></li>
+    <li>${userList[0]['username']} = <span th:text="${userList[0]['username']}"></span></li>
+    <li>${userList[0].getUsername()} = <span th:text="${userList[0].getUsername()}"></span></li>
 </ul>
 <ul> <h3>Map</h3>
     <li>${userMap['userA'].username} = <span th:text="${userMap['userA'].username}"></span></li>
     <li>${userMap['userA']['username']} = <span th:text="${userMap['userA']['username']}"></span></li>
     <li>${userMap['userA'].getUsername()} = <span th:text="${userMap['userA'].getUsername()}"></span></li>
 </ul>
-<div th:with="item=${users[0]}">
+<div th:with="item=${userList[0]}">
     <ul> <h3>첫 번째 유저</h3>
         <li>이름 : <span th:text="${item.username}"></span></li>
         <li>나이 : [[${item.age}]]</li>
