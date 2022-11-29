@@ -99,4 +99,18 @@ public class BasicController {
     public String attribute() {
         return "basic/attribute";
     }
+    @GetMapping("/condition")
+    public String condition(Model model) {
+        addUsers(model);
+        return "basic/condition";
+    }
+
+    //위에서 작성했던 메서드니 중복에 유의하자
+    private void addUsers2(Model model) {
+        List<User> users = Arrays.asList(new User("userA", 10),
+                new User("userB", 20),
+                new User("userC", 30));
+
+        model.addAttribute("users", users);
+    }
 }
