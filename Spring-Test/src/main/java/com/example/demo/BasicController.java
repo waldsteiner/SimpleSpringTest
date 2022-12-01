@@ -119,4 +119,10 @@ public class BasicController {
         model.addAttribute("data", "Spring!");
         return "basic/comments";
     }
+
+    @GetMapping("/bloco")
+    public String block(Model model) {
+        addUsers(model);
+        return "basic/block";
+    }
 }
