@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
@@ -124,5 +125,13 @@ public class BasicController {
     public String block(Model model) {
         addUsers(model);
         return "basic/block";
+    }
+
+    @GetMapping("/javascript")
+    public String javascript(Model model) throws JsonProcessingException {
+        model.addAttribute("user", new User("userA", 10));
+        addUsers(model);
+
+        return "basic/javascript";
     }
 }
