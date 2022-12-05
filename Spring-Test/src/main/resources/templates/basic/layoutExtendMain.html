@@ -8,5 +8,10 @@
     <p>메인 페이지 컨텐츠</p>
     <div>메인 페이지 포함 내용</div>
 </section>
+<input type="text" id="itemName" name="itemName" th:value="*{itemName}"/>
+<input type="hidden" name="_open" value="on"><!-- 히든 필드 추가 -->
+<input type="checkbox" id="open" name="open" class="form-check-input" />
+<input type="text" id="open" name="open" th:value="true" checked="checked"/>
+<input type="hidden" name="_open" value="on"><!-- 히든 필드 추가 -->
 </body>
 </html>
