@@ -10,8 +10,8 @@
 </section>
 <input type="text" id="itemName" name="itemName" th:value="*{itemName}"/>
 <input type="hidden" name="_open" value="on"><!-- 히든 필드 추가 -->
-<input type="checkbox" id="open" name="open" class="form-check-input" />
-<input type="text" id="open" name="open" th:value="true" checked="checked"/>
+<input type="checkbox" id="open1" name="open" class="form-check-input" />
+<input type="text" id="open1" name="open" th:value="true" checked="checked"/>
 <input type="hidden" name="_open" value="on"><!-- 히든 필드 추가 -->
 <div>
     <div>등록 지역</div>
@@ -20,27 +20,6 @@
                class="form-check-input">
         <label th:for="${#ids.prev('regions')}"
                th:text="${region.value}" class="form-check-label">서울</label>
-    </div>
-</div>
-<div>
-    <div>등록 지역</div>
-    <div class="form-check form-check-inline">
-        <input type="checkbox" value="SEOUL" class="form-check-input"
-               id="regions1" name="regions">
-        <input type="hidden" name="_regions" value="on"/>
-        <label for="regions1" class="form-check-label">서울</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input type="checkbox" value="BUSAN" class="form-check-input"
-               id="regions2" name="regions">
-        <input type="hidden" name="_regions" value="on"/>
-        <label for="regions2" class="form-check-label">부산</label>
-    </div>
-    <div class="form-check form-check-inline">
-        <input type="checkbox" value="JEJU" class="form-check-input"
-               id="regions3" name="regions">
-        <input type="hidden" name="_regions" value="on"/>
-        <label for="regions3" class="form-check-label">제주</label>
     </div>
 </div>
 <div>
