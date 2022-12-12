@@ -11,8 +11,8 @@
 <input type="text" id="itemName" name="itemName" th:value="*{itemName}"/>
 <input type="hidden" name="_open" value="on"><!-- 히든 필드 추가 -->
 <input type="checkbox" id="open1" name="open" class="form-check-input" />
-<input type="text" id="open1" name="open" th:value="true" checked="checked"/>
-<input type="hidden" name="_open" value="on"><!-- 히든 필드 추가 -->
+<input type="text" id="open2" name="open" th:value="true" checked="checked"/>
+<input type="hidden" name="_open3" value="on"><!-- 히든 필드 추가 -->
 <div>
     <div>등록 지역</div>
     <div th:each="region : ${regions}" class="form-check form-check-inline">
