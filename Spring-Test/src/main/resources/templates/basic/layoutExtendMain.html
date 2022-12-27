@@ -62,19 +62,5 @@
         </label>
     </div>
 </div>
-<select th:field="${item.deliveryCode}" class="form-select">
-    <option value="">==배송 방식 선택==</option>
-    <option th:each="deliveryCode : ${deliveryCodes}"
-            th:value="${deliveryCode.code}"
-            th:text="${deliveryCode.displayName}">FAST
-    </option>
-</select>
-<select class="form-select" id="deliveryCode" name="deliveryCode">
-    <option value="">==배송 방식 선택==</option>
-    <option value="FAST" selected="selected">빠른 배송</option>
-    <option value="NORMAL">일반 배송</option>
-    <option value="SLOW">느린 배송</option>
-</select>
-
 </body>
 </html>
